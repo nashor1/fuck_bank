@@ -288,6 +288,7 @@ def final(idcard,cookies,num,session,code1,prInfo,MAC):
 def main(idcard):
     with requests.Session() as session:
         try:
+            time.sleep(4)
             prInfo = orderPay(session)
             resp2 = post_mac2(session,prInfo)
             MAC, payload = get_mac2(resp2)
